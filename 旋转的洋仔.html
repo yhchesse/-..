@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 400px;
+            margin: 200px auto;
+            background-color: #ccc;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: auto 10s ease  infinite ;
+        }
+        #box div{
+            width: 400PX;
+            height: 400PX;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute; 
+            top: 0;
+            left: 0;
+            border: 1px solid #000;
+            font: bold italic 20px '微软雅黑';
+            background-size: 400px 400px;
+        }
+        .left{       
+            background-color: yellow;
+            transform-origin: left center;
+            transform: rotateY(90deg); 
+            background: url('./img/1.jpg');
+            
+        }
+        .right{
+            background-color: red;
+            transform: rotateY(-90deg);
+            transform-origin: right center;
+            background: url('./img/2.jpg');
+        }
+        .top{
+            background-color: green;
+            transform: rotateX(-90deg);
+            transform-origin: top center;
+            background: url('./img/3.jpg');
+        }
+        .bottom{
+            background-color: purple;
+            transform: rotateX(90deg);
+            transform-origin: bottom center;
+            background: url('./img/4.jpg');
+        }
+        .front{
+            
+            background-color:orange;
+            transform: translateZ(0);
+            background: url('./img/5.jpg');
+        }
+        .back{
+            background-color:pink;
+            transform: translateZ(-400px);
+            background: url('./img/6.jpg');
+        }
+        @keyframes auto{
+            0%{
+                transform: rotateX(0) rotateY(0)
+            }
+            100%{
+                transform: rotateX(-360deg) rotateY(-360deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="front"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>
